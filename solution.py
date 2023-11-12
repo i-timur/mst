@@ -71,15 +71,12 @@ def draw(graph):
 if __name__ == '__main__':
     n = 4
 
-    # граф
     adjacency_matrix = init_graph(n)
     G = nx.from_numpy_array(adjacency_matrix)
     draw(G)
 
-    # минимальное дерево
     G = prim(nx.to_numpy_array(G))
     draw(G)
 
-    # кластеры
     G = remove_max(G, 3)
     draw(G)
